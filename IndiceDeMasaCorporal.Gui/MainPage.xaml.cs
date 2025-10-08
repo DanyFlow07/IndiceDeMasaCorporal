@@ -7,10 +7,7 @@
         public MainPage()
         {
             InitializeComponent();
-            PesoEntry.Text = string.Empty;
-            EstaturaEntry.Text = string.Empty;
-            ImcLabel.Text = string.Empty;
-            SituacionNutricionalLabel.Text = string.Empty;
+            LimpiarInformacion();
         }
 
         private void OnCalcularButton_Clicked(object sender, EventArgs e)
@@ -24,11 +21,17 @@
 
         private void OnLimpiarButton_Clicked(object sender, EventArgs e)
         {
+            LimpiarInformacion();
+        }
+
+        private void LimpiarInformacion()
+        {
             PesoEntry.Text = string.Empty;
             EstaturaEntry.Text = string.Empty;
             ImcLabel.Text = string.Empty;
             SituacionNutricionalLabel.Text = string.Empty;
         }
+
         private decimal IndiceDeMasaCorporal(decimal peso,decimal estatura)
         {
             return peso / (estatura * estatura);
